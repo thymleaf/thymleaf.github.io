@@ -1,5 +1,11 @@
-# thymleaf.github.io
-blogs
+转换器
 
+　　在上面的例子中通过获取ResponseBody后，我们自己使用Gson来解析接收到的Json格式数据。在Retrofit中当创建一个Retrofit实例的时候可以为其添加一个Json转换器，这样就会自动将Json格式的响应体转换为所需要的Java对象。那么先来看一下如何根据已有的Json格式数据如何生成Java对象。当然我们可以根据已知的数据手动创建Java对象，也可以通过工具更具Json格式为我们自动生成Java对象。
 
-readme
+自动生成Java对象
+
+　　在这里介绍两种根据Json数据自动生成Java对象的工具。
+
+jsonschema2pojo
+
+　　可以通过访问jsonschema2pojo网站。先来看一下它的使用方法。
