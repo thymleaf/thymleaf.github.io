@@ -3,4 +3,4 @@ type:git
 repo:git@github.com:thymleaf/thymleaf.github.io.git
 branch:master
 
-theme: jekyll-theme-time-machine
+theme: jekyll-theme-leap-day
