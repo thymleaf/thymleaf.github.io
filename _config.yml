@@ -1,1 +1,4 @@
-theme: jekyll-theme-minimal
+deploy:
+type:git
+repo:git@github.com:thymleaf/thymleaf.github.io.git
+branch:master
