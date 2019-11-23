@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-cn">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>我用篱笆捏一座城  | Retrofit</title>
+    <title>我用篱笆捏一座城  | Retrofit，再回首</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="generator" content="Hugo 0.59.1" />
     
@@ -25,26 +25,44 @@
 
     
     
-    <meta property="og:title" content="Retrofit" />
-<meta property="og:description" content="" />
+    <meta property="og:title" content="Retrofit，再回首" />
+<meta property="og:description" content="Retrofit:运用于Java和Android上类型安全的http客户端。
+
+
+A type-safe HTTP client for Android and Java
+
+
+使用OkHttp作为http请求，所以，Retrofit只是OkHttp的封装，使之使用起来更简单和高效。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://thymleaf.github.io/posts/android/retrofit/" />
 <meta property="article:published_time" content="2019-11-20T20:14:52+08:00" />
 <meta property="article:modified_time" content="2019-11-20T20:14:52+08:00" />
-<meta itemprop="name" content="Retrofit">
-<meta itemprop="description" content="">
+<meta itemprop="name" content="Retrofit，再回首">
+<meta itemprop="description" content="Retrofit:运用于Java和Android上类型安全的http客户端。
+
+
+A type-safe HTTP client for Android and Java
+
+
+使用OkHttp作为http请求，所以，Retrofit只是OkHttp的封装，使之使用起来更简单和高效。">
 
 
 <meta itemprop="datePublished" content="2019-11-20T20:14:52&#43;08:00" />
 <meta itemprop="dateModified" content="2019-11-20T20:14:52&#43;08:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="410">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Retrofit"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Retrofit，再回首"/>
+<meta name="twitter:description" content="Retrofit:运用于Java和Android上类型安全的http客户端。
+
+
+A type-safe HTTP client for Android and Java
+
+
+使用OkHttp作为http请求，所以，Retrofit只是OkHttp的封装，使之使用起来更简单和高效。"/>
 
   </head>
 
@@ -65,6 +83,16 @@
       
 
       
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
       
 
 
@@ -72,6 +100,16 @@
 
 
 
+
+<a href="https://github.com/thymleaf" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
 
 
 
@@ -97,7 +135,7 @@
           
         POSTS
       </p>
-      <h1 class="f1 athelas mb1">Retrofit</h1>
+      <h1 class="f1 athelas mb1">Retrofit，再回首</h1>
       
       
       <time class="f6 mv4 dib tracked" datetime="2019-11-20T20:14:52&#43;08:00">November 20, 2019</time>
@@ -105,7 +143,276 @@
       
     </header>
 
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><ul class="pa0">
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><strong><em>Retrofit:</em></strong>运用于Java和Android上<a href="https://stackoverflow.com/questions/260626/what-is-type-safe">类型安全</a>的http客户端。</p>
+
+<blockquote>
+<p>A type-safe HTTP client for Android and Java</p>
+</blockquote>
+
+<p>使用<a href="https://github.com/square/okhttp">OkHttp</a>作为http请求，所以，Retrofit只是OkHttp的封装，使之使用起来更简单和高效。</p>
+
+<hr />
+
+<h2 id="used">基本使用</h2>
+
+<p>1、添加依赖：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">implementation <span style="color:#e6db74">&#39;com.squareup.retrofit2:retrofit:2.6.1&#39;</span></code></pre></div>
+<p>最新版本可以在<a href="https://github.com/square/retrofit/releases">这里</a>查看。</p>
+
+<p>如果在Android端使用的话，需要在AndroidManifest.xml文件中添加网络权限：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;uses-permission</span> <span style="color:#a6e22e">android:name=</span><span style="color:#e6db74">&#34;android.permission.INTERNET&#34;</span> <span style="color:#f92672">/&gt;</span></code></pre></div>
+<p>2、将http请求在java接口中声明，如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#960050;background-color:#1e0010">public interface </span>GitHubService {
+  <span style="color:#a6e22e">@GET</span>(<span style="color:#e6db74">&#34;users/{user}/repos&#34;</span>)
+  <span style="color:#960050;background-color:#1e0010">Call&lt;List&lt;Repo&gt;&gt; listRepos</span>(<span style="color:#a6e22e">@Path</span>(<span style="color:#e6db74">&#34;user&#34;</span>) <span style="color:#960050;background-color:#1e0010">String user</span>);
+}</code></pre></div>
+<p>3、发起请求：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#960050;background-color:#1e0010">Retrofit retrofit </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Retrofit.<span style="color:#a6e22e">Builder</span>()
+    .<span style="color:#a6e22e">baseUrl</span>(<span style="color:#e6db74">&#34;https://api.github.com/&#34;</span>)
+    .<span style="color:#a6e22e">build</span>();
+
+<span style="color:#960050;background-color:#1e0010">GitHubService service </span><span style="color:#f92672">=</span> retrofit.<span style="color:#a6e22e">create</span>(GitHubService.<span style="color:#a6e22e">class</span>);
+<span style="color:#960050;background-color:#1e0010">Call&lt;List&lt;Repo&gt;&gt; repos </span><span style="color:#f92672">=</span> service.<span style="color:#a6e22e">listRepos</span>(<span style="color:#e6db74">&#34;octocat&#34;</span>);
+
+<span style="color:#75715e">//执行异步请求
+</span><span style="color:#75715e"></span>repos.<span style="color:#a6e22e">enqueue</span>(<span style="color:#66d9ef">new</span> Callback<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>Repo<span style="color:#f92672">&gt;&gt;</span>() {
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#960050;background-color:#1e0010">public void </span>onResponse(<span style="color:#960050;background-color:#1e0010">Call&lt;List&lt;Repo&gt;&gt; call</span>, <span style="color:#960050;background-color:#1e0010">Response&lt;List&lt;Repo&gt;&gt; response</span>)
+    {
+        Log.<span style="color:#a6e22e">d</span>(<span style="color:#e6db74">&#34;onResponse&#34;</span>, <span style="color:#e6db74">&#34;success&#34;</span>);
+    }
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#960050;background-color:#1e0010">public void </span>onFailure(<span style="color:#960050;background-color:#1e0010">Call&lt;List&lt;Repo&gt;&gt; call</span>, <span style="color:#960050;background-color:#1e0010">Throwable t</span>)
+    {
+        Log.<span style="color:#a6e22e">d</span>(<span style="color:#e6db74">&#34;onFailure&#34;</span>, <span style="color:#e6db74">&#34;failure&#34;</span>);
+    }
+});</code></pre></div>
+<p>但是如果是初次使用Retrofit的小伙伴，会发现按照以上方法去执行请求会报如下错误：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java">java.<span style="color:#a6e22e">lang</span>.<span style="color:#a6e22e">IllegalArgumentException</span><span style="color:#f92672">:</span> <span style="color:#960050;background-color:#1e0010">Unable to create converter </span><span style="color:#66d9ef">for</span> XXX</code></pre></div>
+<p><strong><em>Unable to create converter?</em></strong>这是因为Retrofit默认不会把响应数据（Response）转化为实体列，我们在<a href="#Converter">下文</a>详细介绍。
+那Retrofit默认情况下返回的是什么数据类型呢？<strong><em>ResponseBody</em></strong>！！！我们把api接口稍微改下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#a6e22e">@GET</span>(<span style="color:#e6db74">&#34;users/{user}/repos&#34;</span>)
+<span style="color:#960050;background-color:#1e0010">Call&lt;ResponseBody&gt; getRepos</span>(<span style="color:#a6e22e">@Path</span>(<span style="color:#e6db74">&#34;user&#34;</span>) <span style="color:#960050;background-color:#1e0010">String user</span>);</code></pre></div>
+<p>相应的，请求方法也改一改：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#960050;background-color:#1e0010">Retrofit retrofit </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Retrofit.<span style="color:#a6e22e">Builder</span>()
+                .<span style="color:#a6e22e">baseUrl</span>(<span style="color:#e6db74">&#34;https://api.github.com/&#34;</span>)
+                .<span style="color:#a6e22e">build</span>();
+<span style="color:#960050;background-color:#1e0010">GitHubService service </span><span style="color:#f92672">=</span> retrofit.<span style="color:#a6e22e">create</span>(GitHubService.<span style="color:#a6e22e">class</span>);
+<span style="color:#960050;background-color:#1e0010">Call&lt;ResponseBody&gt; call </span><span style="color:#f92672">=</span> service.<span style="color:#a6e22e">getRepos</span>(<span style="color:#e6db74">&#34;octocat&#34;</span>);
+<span style="color:#75715e">//执行异步请求
+</span><span style="color:#75715e"></span>call.<span style="color:#a6e22e">enqueue</span>(<span style="color:#66d9ef">new</span> Callback<span style="color:#f92672">&lt;</span>ResponseBody<span style="color:#f92672">&gt;</span>() {
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#960050;background-color:#1e0010">public void </span>onResponse(<span style="color:#960050;background-color:#1e0010">Call&lt;ResponseBody&gt; call</span>, <span style="color:#960050;background-color:#1e0010">Response&lt;ResponseBody&gt; response</span>)
+    {
+        Log.<span style="color:#a6e22e">d</span>(<span style="color:#e6db74">&#34;onResponse&#34;</span>, <span style="color:#e6db74">&#34;success&#34;</span>);
+    }
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#960050;background-color:#1e0010">public void </span>onFailure(<span style="color:#960050;background-color:#1e0010">Call&lt;ResponseBody&gt; call</span>, <span style="color:#960050;background-color:#1e0010">Throwable t</span>)
+    {
+        Log.<span style="color:#a6e22e">d</span>(<span style="color:#e6db74">&#34;onFailure&#34;</span>, <span style="color:#e6db74">&#34;failure&#34;</span>);
+    }
+});</code></pre></div>
+<p>这其实也挺好理解的，http客户端发起一起请求（Request），服务端返回一个响应（Response）,只不过把响应体（ResponseBody）放在Response中而已。</p>
+
+<p>如果你要对服务端响应的数据作处理，只需将ResponseBody转化为特定数据，如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#a6e22e">@Override</span>
+<span style="color:#960050;background-color:#1e0010">public void </span>onResponse(<span style="color:#960050;background-color:#1e0010">Call&lt;ResponseBody&gt; call</span>, <span style="color:#960050;background-color:#1e0010">Response&lt;ResponseBody&gt; response</span>)
+{
+    <span style="color:#960050;background-color:#1e0010">ResponseBody responseBody </span><span style="color:#f92672">=</span> response.<span style="color:#a6e22e">body</span>();
+    <span style="color:#75715e">//TODO
+</span><span style="color:#75715e"></span>    Log.<span style="color:#a6e22e">d</span>(<span style="color:#e6db74">&#34;onResponse&#34;</span>, <span style="color:#e6db74">&#34;success&#34;</span>);
+}</code></pre></div>
+<p><strong><em>Note:</em></strong>当处理ResponseBody数据时，必须与请求放在同一线程里执行，因为响应结束以后必须调用<code>Response.close()</code>方法来关闭该请求。</p>
+
+<p>以上是执行<strong><em>异步</em></strong>请求，如果是执行<strong><em>同步</em></strong>请求，方法如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#960050;background-color:#1e0010">Call&lt;ResponseBody&gt; call </span><span style="color:#f92672">=</span> service.<span style="color:#a6e22e">getRepos</span>(<span style="color:#e6db74">&#34;octocat&#34;</span>);
+<span style="color:#960050;background-color:#1e0010">ResponseBody responseBody </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+<span style="color:#66d9ef">try</span>
+{
+    <span style="color:#960050;background-color:#1e0010">Response&lt;ResponseBody&gt; response </span><span style="color:#f92672">=</span> call.<span style="color:#a6e22e">execute</span>();
+    responseBody <span style="color:#f92672">=</span> response.<span style="color:#a6e22e">body</span>();
+}
+<span style="color:#66d9ef">catch</span> (<span style="color:#960050;background-color:#1e0010">IOException e</span>)
+{
+    e.<span style="color:#a6e22e">printStackTrace</span>();
+}
+<span style="color:#66d9ef">finally</span>
+{
+    <span style="color:#66d9ef">if</span> (responseBody <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>)
+    {
+        responseBody.<span style="color:#a6e22e">close</span>();
+    }
+}</code></pre></div>
+<p><strong><em>Note:</em></strong>执行请求时，切记在<code>finally</code>代码块中调用<code>responseBody.close()</code>关闭请求。但是同步请求在Android端一般很少用。</p>
+
+<p>以上就是Retrofit的基本使用，但是在实际的业务场景中，api的设计各式各样，当然，Retrofit也能够满足任何复杂的api设计。</p>
+
+<h2 id="api申明">API申明</h2>
+
+<p>在java接口中申明请求方法，通过注解和参数生成执行的请求。</p>
+
+<p>1、请求方法</p>
+
+<p>每个请求方法必须有一个http注解来指定请求方法和URL，Retrofit提供了五个内置的注解，分别是：
+GET、POST、PUT、DELETE、HEAD，</p>
+
+<p>每个请求对应的url在请求方法的参数里指定，如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#a6e22e">@GET</span>(<span style="color:#e6db74">&#34;users/list&#34;</span>)</code></pre></div>
+<p>当然，url可以添加其他的参数：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#a6e22e">@GET</span>(<span style="color:#e6db74">&#34;users/list?sort=desc&#34;</span>)</code></pre></div>
+<p>2、URL操作</p>
+
+<p>请求url路径可以被动态的追加请求参数或者替换其中某一个部分：</p>
+
+<p><strong>请求参数</strong></p>
+
+<p>使用@Query添加一个请求参数：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java">  <span style="color:#75715e">//对应的请求地址：users/list?sort=xxx
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">@GET</span>(<span style="color:#e6db74">&#34;users/list&#34;</span>)
+  <span style="color:#960050;background-color:#1e0010">Call&lt;ResponseBody&gt; getUser</span>(<span style="color:#a6e22e">@Query</span>(<span style="color:#e6db74">&#34;sort&#34;</span>)<span style="color:#960050;background-color:#1e0010">String sort</span>);</code></pre></div>
+<p>如果有多个请求参数，依次添加到接口方法的参数中，或者使用<code>@QueryMap</code>注解，
+  该注解后跟一个<code>Map</code>对象，可将所有的请求参数以键值对的方式添加到Map集合中：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java">  <span style="color:#75715e">//对应的请求地址：users/list?xxx=xxx&amp;yyy=yyy
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">@GET</span>(<span style="color:#e6db74">&#34;users/list&#34;</span>)
+  <span style="color:#960050;background-color:#1e0010">Call&lt;ResponseBody&gt; getUser</span>(<span style="color:#a6e22e">@QueryMap</span> <span style="color:#960050;background-color:#1e0010">Map args</span>);</code></pre></div>
+<p><strong>路径替换</strong></p>
+
+<p>使用<code>@Path</code>注解替换url地址中用大括号<code>{}</code>包围起来的部分，
+  相当于大括号里面的值是一个变量，然后用<code>@Path</code>里面的参数去赋值：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java">  <span style="color:#75715e">//Path后面的参数可以指定一种数据类型，但一般使用字符串或者整形
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//对应的请求地址：group/xxx/users
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">@GET</span>(<span style="color:#e6db74">&#34;group/{id}/users&#34;</span>)
+  <span style="color:#960050;background-color:#1e0010">Call&lt;ResponseBody&gt; groupList</span>(<span style="color:#a6e22e">@Path</span>(<span style="color:#e6db74">&#34;id&#34;</span>) <span style="color:#960050;background-color:#1e0010">int groupId</span>);</code></pre></div>
+<p>如果url中有多个位置需要替换，自然添加多个<code>@Path</code>即可，当然，路径替换和请求参数可以混用：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java">  <span style="color:#75715e">//对应的请求地址：group/xxx/users?yyy=yyy&amp;zzz=zzz
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">@GET</span>(<span style="color:#e6db74">&#34;group/{id}/users&#34;</span>)
+  <span style="color:#960050;background-color:#1e0010">Call&lt;List&lt;User&gt;&gt; groupList</span>(<span style="color:#a6e22e">@Path</span>(<span style="color:#e6db74">&#34;id&#34;</span>) <span style="color:#960050;background-color:#1e0010">int groupId</span>, <span style="color:#a6e22e">@QueryMap</span> Map<span style="color:#f92672">&lt;</span>String, <span style="color:#960050;background-color:#1e0010">String&gt; options</span>);</code></pre></div>
+<p><strong>请求体</strong></p>
+
+<p>使用<code>@Body</code>指定java实体作为请求体：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java">  <span style="color:#a6e22e">@POST</span>(<span style="color:#e6db74">&#34;users/new&#34;</span>)
+  <span style="color:#960050;background-color:#1e0010">Call&lt;User&gt; createUser</span>(<span style="color:#a6e22e">@Body</span> <span style="color:#960050;background-color:#1e0010">User user</span>);</code></pre></div>
+<p><strong><em>Note:</em></strong>使用该注解需要添加<strong><em>converter</em></strong>，否则只能使用<code>RequestBody</code>。</p>
+
+<p><strong>表单数据</strong></p>
+
+<p>使用<code>@Field</code>注解提供表单键值对数据，通过<code>@FormUrlEncoded</code>注解去编码：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java">  <span style="color:#a6e22e">@FormUrlEncoded</span>
+  <span style="color:#a6e22e">@POST</span>(<span style="color:#e6db74">&#34;user/edit&#34;</span>)
+  <span style="color:#960050;background-color:#1e0010">Call&lt;User&gt; updateUser</span>(<span style="color:#a6e22e">@Field</span>(<span style="color:#e6db74">&#34;first_name&#34;</span>) <span style="color:#960050;background-color:#1e0010">String first</span>, <span style="color:#a6e22e">@Field</span>(<span style="color:#e6db74">&#34;last_name&#34;</span>) <span style="color:#960050;background-color:#1e0010">String last</span>);</code></pre></div>
+<p><strong><em>Note:</em></strong>不要遗漏<code>@FormUrlEncoded</code>。</p>
+
+<p><strong>Part &amp; Multipart</strong></p>
+
+<p>@Part和@Multipart主要用于文件上传，关于@Part的详细说明，请查看<a href="https://github.com/square/retrofit/blob/master/retrofit/src/main/java/retrofit2/http/Part.java">这里</a>。</p>
+
+<p>api申明：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java">  <span style="color:#a6e22e">@Multipart</span>
+  <span style="color:#a6e22e">@PUT</span>(<span style="color:#e6db74">&#34;user/photo&#34;</span>)
+  <span style="color:#960050;background-color:#1e0010">Call&lt;User&gt; updateUser</span>(<span style="color:#a6e22e">@Part</span>(<span style="color:#e6db74">&#34;photo&#34;</span>) <span style="color:#960050;background-color:#1e0010">RequestBody photo</span>);</code></pre></div>
+<p><strong><em>Note:</em></strong> <code>@Multipart</code>不可遗漏。</p>
+
+<p><strong>请求头</strong></p>
+
+<p>使用<code>@Headers</code>设置静态的请求头：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java">  <span style="color:#a6e22e">@Headers</span>(<span style="color:#e6db74">&#34;Cache-Control: max-age=640000&#34;</span>)
+  <span style="color:#a6e22e">@GET</span>(<span style="color:#e6db74">&#34;widget/list&#34;</span>)
+  <span style="color:#960050;background-color:#1e0010">Call&lt;List&lt;Widget&gt;&gt; widgetList</span>();</code></pre></div>
+<p>或者多个请求头：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java">  <span style="color:#a6e22e">@Headers</span>({
+    <span style="color:#e6db74">&#34;Accept: application/vnd.github.v3.full+json&#34;</span>,
+    <span style="color:#e6db74">&#34;User-Agent: Retrofit-Sample-App&#34;</span>
+  })
+  <span style="color:#a6e22e">@GET</span>(<span style="color:#e6db74">&#34;users/{username}&#34;</span>)
+  <span style="color:#960050;background-color:#1e0010">Call&lt;User&gt; getUser</span>(<span style="color:#a6e22e">@Path</span>(<span style="color:#e6db74">&#34;username&#34;</span>) <span style="color:#960050;background-color:#1e0010">String username</span>);</code></pre></div>
+<p>如果需要动态的设置请求头，则需要在请求方法中添加<code>@Header</code>参数：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java">  <span style="color:#a6e22e">@GET</span>(<span style="color:#e6db74">&#34;user&#34;</span>)
+  <span style="color:#960050;background-color:#1e0010">Call&lt;User&gt; getUser</span>(<span style="color:#a6e22e">@Header</span>(<span style="color:#e6db74">&#34;Authorization&#34;</span>) <span style="color:#960050;background-color:#1e0010">String authorization</span>)</code></pre></div>
+<p><strong>@Header</strong>参数值可以设置为<strong>null</strong>，类似于请求参数，可以通过<code>@HeaderMap</code>传入多个请求请求头：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java">  <span style="color:#a6e22e">@GET</span>(<span style="color:#e6db74">&#34;user&#34;</span>)
+  <span style="color:#960050;background-color:#1e0010">Call&lt;User&gt; getUser</span>(<span style="color:#a6e22e">@HeaderMap</span> Map<span style="color:#f92672">&lt;</span>String, <span style="color:#960050;background-color:#1e0010">String&gt; headers</span>);</code></pre></div>
+<p>除此之外，还可以通过<a href="#Interceptor">Interceptor</a>(拦截器)为每个请求添加请求头。</p>
+
+<p>以上就是<strong>Retrofit</strong> api申明，对于任何一个[REST]() API，Retrofit都能<strong>本职</strong>的完成网络请求工作，
+  如果仅仅仅此而已，相对与其他的http客户端，Retrofit并没有什么亮点，对于这么高贵的框架，是不可能的。
+  我们再来回顾一下Retrofit的基本使用，当请求完成以后，我们还需要单独出来<code>ResponseBody</code>的数据，
+  理想状态下，我们应该拒绝编码这些没有业务逻辑代码，怎么办，当然是交给<strong>Converter</strong>了。</p>
+
+<h2 id="Converter">Converter</h2>
+
+<p>默认情况下，Retrofit只能把服务端返回的内容序列化到ResponseBody中，接收的数据也只能ResonanceBody对象，
+添加Converter后，无论是接收的数据类型还是返回的数据类型，都可以指定特定对象，并且类型安全。Retrofit现以支持<a href="3">Gson</a>、
+<a href="4">Jackson</a>、<a href="5">Moshi</a>、<a href="6">protobuf</a>、<a href="7">wire</a>、<a href="8">xml</a>等六种转化器，此处以最常用Gson作示例：</p>
+
+<p><strong>添加依赖</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">implementation <span style="color:#e6db74">&#39;com.squareup.retrofit2:converter-gson:2.6.2&#39;</span></code></pre></div>
+<p>版本号与Retrofit保持一致，将Retrofit实例化方法稍微改一下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#960050;background-color:#1e0010">Retrofit retrofit </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Retrofit.<span style="color:#a6e22e">Builder</span>()
+    .<span style="color:#a6e22e">baseUrl</span>(<span style="color:#e6db74">&#34;https://api.github.com&#34;</span>)
+    .<span style="color:#a6e22e">addConverterFactory</span>(GsonConverterFactory.<span style="color:#a6e22e">create</span>())
+    .<span style="color:#a6e22e">build</span>();
+
+<span style="color:#960050;background-color:#1e0010">GitHubService service </span><span style="color:#f92672">=</span> retrofit.<span style="color:#a6e22e">create</span>(GitHubService.<span style="color:#a6e22e">class</span>);</code></pre></div>
+<p>只需添加<code>addConverterFactory(Converter.Factory factory)</code>这一行便可，具体使用参阅<a href="#used">基本使用</a>。
+如果需要重写转化器，创建一个类继承<strong>Converter.Factory</strong>，并传入addConverterFactory()即可。</p>
+
+<p>添加了Converter以后，Retrofit是否可以戴上大佬的帽子了？非也，顶多算标配。</p>
+
+<p>熟悉Android开发的同学，肯定知道一个术语：<strong>主线程</strong>，或者说<strong>UI线程</strong>，和Retrofit有啥关系？</p>
+
+<p>当然有，在Android开发中，凡是耗时的操作，复杂的数据库操作也好，网络请求也好，都不能放在UI线程执行，
+而涉及UI的操作，又必须放在UI线程里执行。那在Retrofit怎么使用？可以是这样：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#75715e">//创建新线程执行网络请求
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">new</span> Thread(<span style="color:#66d9ef">new</span> Runnable() {
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#960050;background-color:#1e0010">public void </span>run()
+    {
+        <span style="color:#960050;background-color:#1e0010">Retrofit retrofit </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Retrofit.<span style="color:#a6e22e">Builder</span>()
+                .<span style="color:#a6e22e">baseUrl</span>(<span style="color:#e6db74">&#34;https://api.github.com/&#34;</span>)
+                .<span style="color:#a6e22e">build</span>();
+        <span style="color:#960050;background-color:#1e0010">ApiDemoService service </span><span style="color:#f92672">=</span> retrofit.<span style="color:#a6e22e">create</span>(ApiDemoService.<span style="color:#a6e22e">class</span>);
+        <span style="color:#960050;background-color:#1e0010">Call&lt;List&lt;Repo&gt;&gt; repos </span><span style="color:#f92672">=</span> service.<span style="color:#a6e22e">listRepos</span>(<span style="color:#e6db74">&#34;octocat&#34;</span>);
+        repos.<span style="color:#a6e22e">enqueue</span>(<span style="color:#66d9ef">new</span> Callback<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>Repo<span style="color:#f92672">&gt;&gt;</span>() {
+            <span style="color:#a6e22e">@Override</span>
+            <span style="color:#960050;background-color:#1e0010">public void </span>onResponse(<span style="color:#960050;background-color:#1e0010">Call&lt;List&lt;Repo&gt;&gt; call</span>, <span style="color:#960050;background-color:#1e0010">Response&lt;List&lt;Repo&gt;&gt; response</span>)
+            {
+                <span style="color:#75715e">//在UI线程执行UI操作
+</span><span style="color:#75715e"></span>                getActivity().<span style="color:#a6e22e">runOnUiThread</span>(<span style="color:#66d9ef">new</span> Runnable() {
+                    <span style="color:#a6e22e">@Override</span>
+                    <span style="color:#960050;background-color:#1e0010">public void </span>run()
+                    {
+                        <span style="color:#75715e">//TODO
+</span><span style="color:#75715e"></span>                    }
+                });
+            }
+
+            <span style="color:#a6e22e">@Override</span>
+            <span style="color:#960050;background-color:#1e0010">public void </span>onFailure(<span style="color:#960050;background-color:#1e0010">Call&lt;List&lt;Repo&gt;&gt; call</span>, <span style="color:#960050;background-color:#1e0010">Throwable t</span>)
+            {
+                Log.<span style="color:#a6e22e">d</span>(<span style="color:#e6db74">&#34;onFailure&#34;</span>, <span style="color:#e6db74">&#34;failure&#34;</span>);
+            }
+        });
+    }
+}).<span style="color:#a6e22e">start</span>();</code></pre></div>
+<p>大伙看看这代码，光缩进都让人头疼，有好的办法木有，当然有：<strong>RxJava</strong>。</p>
+
+<h2 id="rxjava">RxJava</h2>
+
+<p>小博觉得，Retrofit中引入RxJava，两方面的原因：一、线程操作；二、数据操作。如果有不恰当的地方，欢迎各大佬指正。</p>
+
+<h2 id="Interceptor">Interceptor</h2>
+
+<hr />
+
+<h2 id="参考">参考</h2>
+
+<p>Retrofit <a href="https://github.com/square/retrofit">https://github.com/square/retrofit</a></p>
+
+<p>Okhttp <a href="https://github.com/square/okhttp">https://github.com/square/okhttp</a></p>
+
+<p>类型安全 <a href="https://stackoverflow.com/questions/260626/what-is-type-safe">https://stackoverflow.com/questions/260626/what-is-type-safe</a></p><ul class="pa0">
   
 </ul>
 <div class="mt6">
@@ -136,6 +443,16 @@
 
 
 
+
+<a href="https://github.com/thymleaf" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
 
 
 
