@@ -49,7 +49,7 @@ A type-safe HTTP client for Android and Java
 
 <meta itemprop="datePublished" content="2019-11-20T20:14:52&#43;08:00" />
 <meta itemprop="dateModified" content="2019-11-20T20:14:52&#43;08:00" />
-<meta itemprop="wordCount" content="410">
+<meta itemprop="wordCount" content="643">
 
 
 
@@ -84,6 +84,12 @@ A type-safe HTTP client for Android and Java
 
       
         <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/art/" title="Arts page">
+              Arts
+            </a>
+          </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
@@ -400,10 +406,149 @@ GET、POST、PUT、DELETE、HEAD，</p>
 
 <h2 id="rxjava">RxJava</h2>
 
-<p>小博觉得，Retrofit中引入RxJava，两方面的原因：一、线程操作；二、数据操作。如果有不恰当的地方，欢迎各大佬指正。</p>
+<p>关于RxJava的详细教程，请看<a href="http://gank.io/post/560e15be2dca930e00da1083">抛物线</a>的这篇文章。</p>
 
+<p>小博觉得，Retrofit中引入RxJava，两方面的原因：一、线程操作；二、数据操作。如果有不恰当的地方，
+欢迎各大佬指正。</p>
+
+<p>从上面的示例中我们可以看到，1、如果我们手动的在新线程里做网络请求，然后在UI线程里执行UI操作的话，
+代码看上去很冗长，可读型较差；2、如果服务端返回的数据较为复杂的话，在app端处理处理数据也让人头疼。
+基于以上两个问题，Retrofit无缝引入RxJava。</p>
+
+<p><strong>引入RxJava依赖</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">implementation <span style="color:#e6db74">&#39;io.reactivex.rxjava2:rxandroid:2.1.1&#39;</span>
+implementation <span style="color:#e6db74">&#39;com.squareup.retrofit2:adapter-rxjava2:2.6.2&#39;</span></code></pre></div>
+<p><a href="https://github.com/ReactiveX/RxAndroid">RxAndroid</a>提供了基于Android的线程操作，所以，也一并引入。</p>
+
+<p>引入依赖后，稍微修改下api申明方法：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#a6e22e">@GET</span>(<span style="color:#e6db74">&#34;users/{user}/repos&#34;</span>)
+<span style="color:#960050;background-color:#1e0010">Flowable&lt;List&lt;Repo&gt;&gt; getRxRepos</span>(<span style="color:#a6e22e">@Path</span>(<span style="color:#e6db74">&#34;user&#34;</span>) <span style="color:#960050;background-color:#1e0010">String user</span>);</code></pre></div>
+<p><strong>执行请求</strong></p>
+
+<p>引入RxJava后，我们再来看看线程怎么切换的：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#960050;background-color:#1e0010">Retrofit retrofit </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Retrofit.<span style="color:#a6e22e">Builder</span>().<span style="color:#a6e22e">baseUrl</span>(<span style="color:#e6db74">&#34;https://api.github.com/&#34;</span>).<span style="color:#a6e22e">build</span>();
+<span style="color:#960050;background-color:#1e0010">GithubService service </span><span style="color:#f92672">=</span> retrofit.<span style="color:#a6e22e">create</span>(GithubService.<span style="color:#a6e22e">class</span>);
+<span style="color:#960050;background-color:#1e0010">Flowable&lt;List&lt;Repo&gt;&gt; flowable </span><span style="color:#f92672">=</span> service.<span style="color:#a6e22e">getRxRepos</span>(<span style="color:#e6db74">&#34;octocat&#34;</span>);
+<span style="color:#75715e">//切换到IO线程执行网络请求
+</span><span style="color:#75715e"></span>flowable.<span style="color:#a6e22e">subscribeOn</span>(Schedulers.<span style="color:#a6e22e">io</span>())
+        <span style="color:#75715e">//切换到UI线程执行UI操作
+</span><span style="color:#75715e"></span>        .<span style="color:#a6e22e">observeOn</span>(AndroidSchedulers.<span style="color:#a6e22e">mainThread</span>())
+        .<span style="color:#a6e22e">subscribe</span>(<span style="color:#66d9ef">new</span> Consumer<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>Repo<span style="color:#f92672">&gt;&gt;</span>()
+        {
+            <span style="color:#a6e22e">@Override</span>
+            <span style="color:#960050;background-color:#1e0010">public void </span>accept(<span style="color:#960050;background-color:#1e0010">List&lt;Repo&gt; repos</span>) <span style="color:#960050;background-color:#1e0010">throws Exception
+</span><span style="color:#960050;background-color:#1e0010">            </span>{
+                Log.<span style="color:#a6e22e">d</span>(<span style="color:#e6db74">&#34;accept&#34;</span>, repos.<span style="color:#a6e22e">toString</span>());
+            }
+        }, <span style="color:#66d9ef">new</span> Consumer<span style="color:#f92672">&lt;</span>Throwable<span style="color:#f92672">&gt;</span>()
+        {
+            <span style="color:#a6e22e">@Override</span>
+            <span style="color:#960050;background-color:#1e0010">public void </span>accept(<span style="color:#960050;background-color:#1e0010">Throwable throwable</span>) <span style="color:#960050;background-color:#1e0010">throws Exception
+</span><span style="color:#960050;background-color:#1e0010">            </span>{
+                Log.<span style="color:#a6e22e">d</span>(<span style="color:#e6db74">&#34;error&#34;</span>, throwable.<span style="color:#a6e22e">getMessage</span>());
+            }
+        });</code></pre></div>
+<p>大家注意看看，整个网络请求的代码还是很多，但是在代码结构就比较单一，发起请求-&gt;线程切换-&gt;数据操作-&gt;结果处理，
+一气呵成，就像步骤如同工厂的工序，逐一完成。</p>
+
+<p><strong>RxJava使用优化</strong></p>
+
+<p>需要明确的是，RxJava使用不当会造成内存泄露，所以在实际的开发中，常常需要单独处理RxJava内存泄露问题。</p>
+
+<p>市面有类似的解决方案，比如<a href="https://github.com/trello/RxLifecycle">RxLifecycle</a>，此外，
+RxJava本身也提供类解决方法，方法如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#960050;background-color:#1e0010">public class YourActivity extends </span>AppCompatActivity
+{
+
+    <span style="color:#960050;background-color:#1e0010">private CompositeDisposable </span>compositeDisposable;
+
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * 将网络请求返回对象Disposable添加到CompositeDisposable，
+</span><span style="color:#75715e">     * 目的是避免RxJava使用过程产生内存泄露
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#960050;background-color:#1e0010">protected void </span>addDisposable(<span style="color:#960050;background-color:#1e0010">Disposable... disposables</span>)
+    {
+        <span style="color:#66d9ef">if</span> (compositeDisposable <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>)
+        {
+            compositeDisposable <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> CompositeDisposable();
+        }
+
+        <span style="color:#66d9ef">for</span> (<span style="color:#960050;background-color:#1e0010">Disposable disposable </span><span style="color:#f92672">:</span> disposables )
+        {
+            compositeDisposable.<span style="color:#a6e22e">add</span>(disposable);
+        }
+    }
+
+
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">     * 在Activity销毁之前释放Disposable对象
+</span><span style="color:#75715e">     */</span>
+    <span style="color:#960050;background-color:#1e0010">private void </span>clearDisposable()
+    {
+        <span style="color:#66d9ef">if</span> (compositeDisposable <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>)
+        {
+            compositeDisposable.<span style="color:#a6e22e">clear</span>();
+        }
+        compositeDisposable <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+    }
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#960050;background-color:#1e0010">protected void </span>onDestroy()
+    {
+        clearDisposable();
+        <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">onDestroy</span>();
+    }
+}</code></pre></div>
+<p>在Activity中声明如上的方法，当然，你可以在封装到Activity基类中，然后在网络请求的地方调用<code>addDisposable(Disposable disposables)</code>方法：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#960050;background-color:#1e0010">Retrofit retrofit </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Retrofit.<span style="color:#a6e22e">Builder</span>().<span style="color:#a6e22e">baseUrl</span>(<span style="color:#e6db74">&#34;https://api.github.com/&#34;</span>).<span style="color:#a6e22e">build</span>();
+addDisposable(retrofit.<span style="color:#a6e22e">create</span>(GithubService.<span style="color:#a6e22e">class</span>).<span style="color:#a6e22e">getRxRepos</span>(<span style="color:#e6db74">&#34;octocat&#34;</span>)
+                      .<span style="color:#a6e22e">subscribeOn</span>(Schedulers.<span style="color:#a6e22e">io</span>())
+                      <span style="color:#75715e">//切换到UI线程执行UI操作
+</span><span style="color:#75715e"></span>                      .<span style="color:#a6e22e">observeOn</span>(AndroidSchedulers.<span style="color:#a6e22e">mainThread</span>())
+                      .<span style="color:#a6e22e">subscribe</span>(<span style="color:#66d9ef">new</span> Consumer<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>Repo<span style="color:#f92672">&gt;&gt;</span>()
+                      {
+                          <span style="color:#a6e22e">@Override</span>
+                          <span style="color:#960050;background-color:#1e0010">public void </span>accept(<span style="color:#960050;background-color:#1e0010">List&lt;Repo&gt; repos</span>) <span style="color:#960050;background-color:#1e0010">throws Exception
+</span><span style="color:#960050;background-color:#1e0010">                          </span>{
+                              Log.<span style="color:#a6e22e">d</span>(<span style="color:#e6db74">&#34;accept&#34;</span>, repos.<span style="color:#a6e22e">toString</span>());
+                          }
+                      }, <span style="color:#66d9ef">new</span> Consumer<span style="color:#f92672">&lt;</span>Throwable<span style="color:#f92672">&gt;</span>()
+                      {
+                          <span style="color:#a6e22e">@Override</span>
+                          <span style="color:#960050;background-color:#1e0010">public void </span>accept(<span style="color:#960050;background-color:#1e0010">Throwable throwable</span>) <span style="color:#960050;background-color:#1e0010">throws Exception
+</span><span style="color:#960050;background-color:#1e0010">                          </span>{
+                              Log.<span style="color:#a6e22e">d</span>(<span style="color:#e6db74">&#34;error&#34;</span>, throwable.<span style="color:#a6e22e">getMessage</span>());
+                          }
+                      }));</code></pre></div>
 <h2 id="Interceptor">Interceptor</h2>
 
+<blockquote>
+<p>Interceptors are a powerful mechanism that can monitor, rewrite, and retry calls.</p>
+</blockquote>
+
+<p>拦截器是能够监控、重写和重试网络请求的机制，详情请异步<a href="https://square.github.io/okhttp/interceptors/">OkHttp Interceptors</a>。</p>
+
+<p><strong>HttpLogInterceptor</strong></p>
+
+<p>HttpLogInterceptor可以将http请求和响应内容打印在控制台。添加依赖：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gradle" data-lang="gradle">implementation <span style="color:#e6db74">&#39;com.squareup.okhttp3:logging-interceptor:3.3.0&#39;</span></code></pre></div>
+<p>获取Retrofit实例：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#960050;background-color:#1e0010">OkHttpClient.Builder builder </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> OkHttpClient.<span style="color:#a6e22e">Builder</span>()
+                            .<span style="color:#a6e22e">connectTimeout</span>(10, TimeUnit.<span style="color:#a6e22e">SECONDS</span>)
+                            .<span style="color:#a6e22e">readTimeout</span>(15, TimeUnit.<span style="color:#a6e22e">SECONDS</span>)
+                            .<span style="color:#a6e22e">writeTimeout</span>(15, TimeUnit.<span style="color:#a6e22e">SECONDS</span>)
+                            .<span style="color:#a6e22e">retryOnConnectionFailure</span>(<span style="color:#66d9ef">true</span>);
+
+<span style="color:#75715e">// Http Log 拦截器
+</span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">HttpLoggingInterceptor logging </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HttpLoggingInterceptor();
+logging.<span style="color:#a6e22e">setLevel</span>(HttpLoggingInterceptor.<span style="color:#a6e22e">Level</span>.<span style="color:#a6e22e">BODY</span>);
+builder.<span style="color:#a6e22e">addInterceptor</span>(logging);
+
+Retrofit <span style="color:#f92672">=</span> retrofit <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Retrofit.<span style="color:#a6e22e">Builder</span>().<span style="color:#a6e22e">baseUrl</span>(AppConfig.<span style="color:#a6e22e">BASE_URL</span>)
+        .<span style="color:#a6e22e">client</span>(builder.<span style="color:#a6e22e">build</span>())
+        .<span style="color:#a6e22e">addConverterFactory</span>(GsonConverterFactory.<span style="color:#a6e22e">create</span>())
+        .<span style="color:#a6e22e">addCallAdapterFactory</span>(RxJava2CallAdapterFactory.<span style="color:#a6e22e">create</span>())
+        .<span style="color:#a6e22e">build</span>();</code></pre></div>
 <hr />
 
 <h2 id="参考">参考</h2>

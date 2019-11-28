@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Arts on 我用篱笆捏一座城</title>
+    <link>https://thymleaf.github.io/art/</link>
+    <description>Recent content in Arts on 我用篱笆捏一座城</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 27 Nov 2019 17:14:50 +0800</lastBuildDate>
+    
+	<atom:link href="https://thymleaf.github.io/art/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>原来青春只有那么几年</title>
+      <link>https://thymleaf.github.io/art/%E5%8E%9F%E6%9D%A5%E9%9D%92%E6%98%A5%E5%8F%AA%E6%9C%89%E9%82%A3%E4%B9%88%E5%87%A0%E5%B9%B4/</link>
+      <pubDate>Wed, 27 Nov 2019 17:14:50 +0800</pubDate>
+      
+      <guid>https://thymleaf.github.io/art/%E5%8E%9F%E6%9D%A5%E9%9D%92%E6%98%A5%E5%8F%AA%E6%9C%89%E9%82%A3%E4%B9%88%E5%87%A0%E5%B9%B4/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
